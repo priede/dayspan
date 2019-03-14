@@ -6545,8 +6545,7 @@ var Patterns = [
         dayOfWeek: 1
     }),
     new Pattern_Pattern('everyOtherWeek', true, function (day) { return 'Every other week on ' + day.format('dddd'); }, { 
-        dayOfWeek: 1, 
-        dayOfMonth: 2
+        dayOfWeek: 1
     }),
     new Pattern_Pattern('monthlyWeek', true, function (day) { return 'Monthly on the ' + Suffix.CACHE[day.weekspanOfMonth + 1] + ' ' + day.format('dddd'); }, {
         dayOfWeek: 1,
