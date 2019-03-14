@@ -40,6 +40,7 @@ export interface PatternRules
 {
   dayOfWeek?: PatternRule;
   dayOfMonth?: PatternRule;
+  everyOtherWeek?: PatternRule;
   lastDayOfMonth?: PatternRule;
   dayOfYear?: PatternRule;
   month?: PatternRule;
@@ -73,7 +74,7 @@ export class Pattern
     'dayOfWeek', 'dayOfMonth', 'lastDayOfMonth', 'dayOfYear',
     'month', 'week', 'year',
     'weekOfYear', 'weekspanOfYear', 'fullWeekOfYear', 'lastWeekspanOfYear', 'lastFullWeekOfYear',
-    'weekOfMonth', 'weekspanOfMonth', 'fullWeekOfMonth', 'lastWeekspanOfMonth', 'lastFullWeekOfMonth'
+    'weekOfMonth', 'weekspanOfMonth', 'fullWeekOfMonth', 'lastWeekspanOfMonth', 'lastFullWeekOfMonth', 'everyOtherWeek'
   ];
 
   /**
@@ -423,11 +424,9 @@ export let Patterns: Pattern[] = [
   ),
   new Pattern(
     'everyOtherWeek', true,
-    (day: Day) => 'Every other week on the ' + day.format('Do') + ' day',
+    (day: Day) => 'Every other week',
     {
-      dayOfWeek: 1,
-      dayOfMonth: 2,
-      weekspanOfMonth: 2
+      everyOtherWeek: 1
     }
   ),
   new Pattern(

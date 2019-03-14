@@ -96,6 +96,11 @@ export class Day
   /**
    *
    */
+  public readonly everyOtherWeek: number;
+
+  /**
+   *
+   */
   public readonly lastDayOfMonth: number;
 
   /**
@@ -206,6 +211,8 @@ export class Day
     this.dayOfMonth           = date.date();
     this.dayOfYear            = date.dayOfYear();
     this.week                 = date.week();
+
+    this.everyOtherWeek       = Day.getEveryOtherWeek( date ); 
 
     this.lastDayOfMonth       = Day.getLastDayOfMonth( date );
     this.weekOfYear           = Day.getWeekOfYear( date );
@@ -846,6 +853,11 @@ export class Day
   public static getLastDayOfMonth(date: moment.Moment): number
   {
     return date.daysInMonth() - date.date() + 1;
+  }
+
+  public static getEveryOtherWeek(date: moment.Moment): number
+  {
+    return date.date() + 7;
   }
 
 }

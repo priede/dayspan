@@ -4330,6 +4330,7 @@ var Day_Day = (function () {
         this.dayOfYear = date.dayOfYear();
         this.week = date.week();
         this.lastDayOfMonth = Day.getLastDayOfMonth(date);
+        this.everyOtherWeek = Day.getEveryOtherWeek(date);
         this.weekOfYear = Day.getWeekOfYear(date);
         this.weekspanOfYear = Day.getWeekspanOfYear(date);
         this.fullWeekOfYear = Day.getFullWeekOfYear(date);
@@ -4835,6 +4836,9 @@ var Day_Day = (function () {
     };
     Day.getLastDayOfMonth = function (date) {
         return date.daysInMonth() - date.date() + 1;
+    };
+    Day.getEveryOtherWeek = function (date) {
+        return date.date() + 7;
     };
     return Day;
 }());
