@@ -425,7 +425,9 @@ export let Patterns: Pattern[] = [
     'everyOtherWeek', true,
     (day: Day) => 'Every other week on the ' + day.format('Do') + ' day',
     {
-      dayOfWeek: 1
+      dayOfWeek: 1,
+      dayOfMonth: 2,
+      weekspanOfMonth: 2
     }
   ),
   new Pattern(
