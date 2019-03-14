@@ -422,6 +422,13 @@ export let Patterns: Pattern[] = [
     }
   ),
   new Pattern(
+    'everyOtherWeek', true,
+    (day: Day) => 'Monthly on the ' + day.format('Do') + ' day',
+    {
+      dayOfMonth: 2
+    }
+  ),
+  new Pattern(
     'custom', true,
     (day: Day) => 'Custom...',
     {
